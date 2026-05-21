@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAKRI TRACKING v2.0 - Eye-Tracking & Facial Analysis</title>
+    <meta name="description" content="Plateforme d'Eye-Tracking et d'Analyse Faciale par Intelligence Artificielle pour le Neuromarketing et la recherche Psychiatrique.">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Background Elements -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <nav class="navbar glass-effect">
+        <div class="logo">
+            <!-- SVG Logo from resources/logo_makri.py (LOGO_SVG) -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" width="150" height="45">
+              <ellipse cx="60" cy="60" rx="45" ry="28" fill="none" stroke="#00D4AA" stroke-width="3"/>
+              <circle cx="60" cy="60" r="18" fill="#00D4AA" opacity="0.9"/>
+              <circle cx="65" cy="55" r="6" fill="#FFFFFF"/>
+              <circle cx="68" cy="52" r="3" fill="#0A1628"/>
+              <path d="M 110 60 Q 130 40, 150 60 T 190 60" fill="none" stroke="#00D4AA" stroke-width="2" opacity="0.6"/>
+              <path d="M 110 60 Q 130 80, 150 60 T 190 60" fill="none" stroke="#00D4AA" stroke-width="2" opacity="0.4"/>
+              <text x="210" y="55" font-family="Segoe UI, Arial, sans-serif" font-size="42" font-weight="700" fill="#FFFFFF">MAKRI</text>
+              <text x="210" y="80" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="300" fill="#00D4AA" letter-spacing="6">TRACKING</text>
+              <line x1="210" y1="88" x2="380" y2="88" stroke="#00D4AA" stroke-width="1" opacity="0.5"/>
+            </svg>
+        </div>
+        <div class="hamburger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+        <div class="nav-links">
+            <a href="#features">Fonctionnalités</a>
+            <a href="#documentation">Documentation</a>
+            <a href="#about">À propos</a>
+            <a href="#contact" class="btn-primary">Essayer la Démo</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <div class="badge">🚀 NeuroVision - Version Finale 2.0</div>
+            <h1>Évaluez les Réactions <span class="highlight">Conscientes & Inconscientes</span>.</h1>
+            <p>La première suite logicielle unifiée combinant <strong>Oculométrie</strong>, <strong>Facial Coding IA</strong> et <strong>Psychométrie</strong>. Conçue pour une recherche holistique, sécurisée et hors-ligne en Neuromarketing et en Psychiatrie.</p>
+            <div class="cta-group">
+                <a href="#features" class="btn-primary">Explorer les Fonctionnalités</a>
+                <a href="#documentation" class="btn-secondary">Lire la Documentation</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="glass-card hero-card">
+                <!-- SVG Icon (LOGO_ICON_SVG) -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="120" height="120" class="floating">
+                  <rect width="64" height="64" rx="12" fill="#0A1628"/>
+                  <ellipse cx="32" cy="32" rx="22" ry="14" fill="none" stroke="#00D4AA" stroke-width="2.5"/>
+                  <circle cx="32" cy="32" r="9" fill="#00D4AA"/>
+                  <circle cx="34" cy="30" r="3" fill="#FFFFFF"/>
+                  <circle cx="35" cy="29" r="1.5" fill="#0A1628"/>
+                </svg>
+                <h3>Pipeline Asynchrone</h3>
+                <p>Traitement temps réel à <strong>30 FPS</strong>. Fusion multi-thread de l'Eye-Tracking et de l'analyse émotionnelle sans perte de performance.</p>
+            </div>
+        </div>
+    </header>
+
+    <section id="features" class="features">
+        <h2 class="section-title">Fonctionnalités Clés du Système</h2>
+        <div class="grid">
+            <div class="feature-card glass-effect">
+                <div class="icon">👁️</div>
+                <h3>Oculométrie (Attention Inconsciente)</h3>
+                <p>Estime les coordonnées d'attention sur l'écran avec une calibration à 9 points (algorithmes de régression polynomiale). Génération de <strong>Scanpaths</strong> et <strong>Heatmaps</strong>. Extraction de métriques avancées sur des zones d'intérêt (AOI) : TTFF, Dwell Time et Fixation Count.</p>
+            </div>
+            <div class="feature-card glass-effect">
+                <div class="icon">🎭</div>
+                <h3>Facial Coding (Émotions Spontanées)</h3>
+                <p>Détection en temps réel des 7 expressions universelles de Paul Ekman via DeepFace et MediaPipe. Projection biométrique sur le plan <strong>Valence & Arousal</strong>. Précision scientifiquement validée sur le dataset RAVDESS (Kappa de Cohen = 0.7351).</p>
+            </div>
+            <div class="feature-card glass-effect">
+                <div class="icon">📝</div>
+                <h3>Psychométrie (Ressenti Conscient)</h3>
+                <p>Intégration d'échelles validées cliniquement pour la recherche. Utilisation du <strong>SAM (Self-Assessment Manikin)</strong> pour l'auto-évaluation interactive de la valence/arousal, et de l'échelle de <strong>Rook & Fisher</strong> pour quantifier la prédisposition à l'achat compulsif.</p>
+            </div>
+            <div class="feature-card glass-effect">
+                <div class="icon">⚡</div>
+                <h3>Architecture Temps Réel & Sécurité</h3>
+                <p>Pipeline asynchrone (Multithreading) producteur/consommateurs garantissant un traitement sans perte à <strong>30 FPS</strong>. Stockage SQLite 3 local (Mode WAL) et synchronisation stricte des données biométriques et déclaratives pour le respect de la confidentialité.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="documentation" class="documentation">
+        <h2 class="section-title">Documentation du Système</h2>
+        <div class="doc-container">
+            <div class="doc-card glass-effect" style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="80" height="80" fill="none" stroke="var(--primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 1.5rem;">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+                <h3 style="justify-content: center; font-size: 2rem;">Guide Utilisateur et Documentation Finale</h3>
+                <p style="margin-bottom: 2rem; color: var(--text-muted); font-size: 1.1rem;">
+                    Consultez la documentation complète et détaillée du projet MAKRI TRACKING, incluant les spécifications techniques, les guides d'utilisation de l'Eye-Tracking, et les protocoles de validation scientifique.
+                </p>
+                <a href="{{ url_for('static', filename='docs/GUIDE_UTILISATEUR_ET_DOCUMENTATION_FINALE.pdf') }}" target="_blank" class="btn-primary" style="font-size: 1.1rem; padding: 1rem 2rem;">
+                    📄 Consulter le PDF
+                </a>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+                <div class="doc-card glass-effect" style="padding: 1.5rem;">
+                    <h4 style="color: var(--primary); margin-bottom: 0.5rem;">🛠️ Architecture</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Moteur Graphique PyQt6, MediaPipe, DeepFace.</p>
+                </div>
+                <div class="doc-card glass-effect" style="padding: 1.5rem;">
+                    <h4 style="color: var(--primary); margin-bottom: 0.5rem;">🗄️ Données</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Base SQLite 3 (confidentialité hors-ligne).</p>
+                </div>
+                <div class="doc-card glass-effect" style="padding: 1.5rem;">
+                    <h4 style="color: var(--primary); margin-bottom: 0.5rem;">📈 Rapports</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Génération de Rapports PDF & Exports Excel.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about glass-effect">
+        <div class="about-content">
+            <h2>À propos du Projet</h2>
+            <p><strong>MAKRI TRACKING</strong> a été pensé comme un outil de recherche pluridisciplinaire, cassant les silos entre la data science, le marketing et la clinique psychiatrique. Totalement offline et sécurisé (SQLite), il garantit le respect de la confidentialité des patients et des consommateurs.</p>
+            
+            <div class="author-credits">
+                <p class="author">Développé par <strong>Soukayna EL MAKRINI</strong></p>
+                <p class="university">Université / Laboratoire : <strong>FPN NADOR</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 MAKRI TRACKING v2.0 - Soukayna EL MAKRINI | FPN NADOR.</p>
+            <p class="small">Propulsé par Python, Flask, PyQt6 et l'Intelligence Artificielle.</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
