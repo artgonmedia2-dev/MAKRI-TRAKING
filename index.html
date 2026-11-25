@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>MAKRI TRACKING · Eye tracking, codage facial et questionnaire sur webcam</title>
+    <meta name="description" content="MAKRI TRACKING enregistre le regard, l'expression du visage et les réponses à un questionnaire dans une seule séance synchronisée, sur un ordinateur portable et sa webcam, sans connexion à Internet.">
+    <meta name="theme-color" content="#040F1F">
+    <meta property="og:title" content="MAKRI TRACKING">
+    <meta property="og:description" content="Le regard, le visage et la réponse : une étude de neuromarketing complète sur webcam.">
+    <meta property="og:image" content="https://artgonmedia2-dev.github.io/MAKRI-TRAKING/static/img/cover.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<header class="topbar" id="haut">
+  <div class="wrap bar-in">
+    <a class="brand" href="#haut" aria-label="MAKRI TRACKING, retour en haut">
+      <svg viewBox="0 0 34 34" width="34" height="34" aria-hidden="true"><rect width="34" height="34" rx="8" fill="#0D1B2E" stroke="#1C2D47"/><path d="M5 17c3.2-5 7.2-7.5 12-7.5S25.8 12 29 17c-3.2 5-7.2 7.5-12 7.5S8.2 22 5 17z" fill="none" stroke="#F1F5F9" stroke-width="1.8"/><circle cx="17" cy="17" r="4.2" fill="#00D4AA"/></svg>
+      <span>MAKRI<b>TRACKING</b></span>
+    </a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="nav" class="nav" aria-label="Navigation principale">
+      <a href="#mesures">Mesures</a>
+      <a href="#seance">Séance</a>
+      <a href="#ecrans">Écrans</a>
+      <a href="#etude">Étude</a>
+      <a href="#limites">Limites</a>
+      <a class="btn btn-sm" href="static/docs/MANUEL_MAKRI_TRACKING.pdf" target="_blank" rel="noopener">Guide PDF</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenu">
+<!-- ═══════════ HERO ═══════════ -->
+<section class="hero">
+  <div class="wrap hero-in">
+    <div class="hero-text">
+      <p class="kicker">Neuromarketing · webcam · hors ligne</p>
+      <h1>MAKRI<span>TRACKING</span></h1>
+      <p class="tagline">Le regard, le visage et la réponse.</p>
+      <p class="lede">Une séance, trois mesures synchronisées, sur un ordinateur portable et sa webcam. Les données restent sur le poste, chiffrées.</p>
+      <div class="ctas">
+        <a class="btn" href="static/docs/MANUEL_MAKRI_TRACKING.pdf" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Télécharger le guide
+        </a>
+        <a class="btn btn-ghost" href="#seance">Voir une séance</a>
+      </div>
+      <dl class="facts">
+        <div><dt>Regard</dt><dd>30<small> mesures/s</small></dd></div>
+        <div><dt>Visage</dt><dd>8<small> expressions</small></dd></div>
+        <div><dt>Questionnaire</dt><dd>30<small> questions</small></dd></div>
+      </dl>
+    </div>
+    <figure class="hero-art">
+      <img src="static/img/cover.webp" width="1536" height="1024" alt="Un visage en nuage de points lumineux pose son regard sur une publicité affichée sur un téléphone, avec carte de chaleur et parcours du regard" fetchpriority="high">
+    </figure>
+  </div>
+</section>
+
+<!-- ═══════════ MESURES ═══════════ -->
+<section class="section" id="mesures">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker">Trois mesures, une horloge</p>
+      <h2>Ce que le logiciel enregistre</h2>
+      <p>Les trois flux sont horodatés sur la même horloge, pendant la même fenêtre d'exposition. Les chiffres ci-dessous sont ceux du code et du fichier de configuration.</p>
+    </header>
+    <div class="cards3">
+      <article class="mcard">
+        <svg class="micon" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#0B3A37"/><path d="M7 20c3.6-5.6 8-8.4 13-8.4s9.4 2.8 13 8.4c-3.6 5.6-8 8.4-13 8.4S10.6 25.6 7 20z" fill="none" stroke="#00D4AA" stroke-width="2"/><circle cx="20" cy="20" r="4.4" fill="#00D4AA"/></svg>
+        <h3>Le regard</h3>
+        <p>MediaPipe repère l'iris dans chaque image. À chaque calibration, le logiciel choisit le modèle de regard qui convient à la personne, par validation croisée, puis lisse le signal (filtre 1 €).</p>
+        <ul class="specs">
+          <li><span>Calibration</span><b>9 points + 4 de vérification</b></li>
+          <li><span>Acceptation</span><b>erreur ≤ 2,5°</b></li>
+          <li><span>Fixations</span><b>I-DT 1,5°, 100 ms</b></li>
+          <li><span>Sorties</span><b>carte de chaleur, parcours, zones</b></li>
+        </ul>
+      </article>
+      <article class="mcard">
+        <svg class="micon" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#0B3A37"/><circle cx="20" cy="20" r="10.5" fill="none" stroke="#00D4AA" stroke-width="2"/><circle cx="16" cy="17.5" r="1.5" fill="#00D4AA"/><circle cx="24" cy="17.5" r="1.5" fill="#00D4AA"/><path d="M14.8 23c3 3 7.4 3 10.4 0" fill="none" stroke="#00D4AA" stroke-width="2" stroke-linecap="round"/></svg>
+        <h3>Le visage</h3>
+        <p>Le modèle FER v2 prédit l'expression dix fois par seconde. Valence et arousal sont des moyennes des 8 classes, pondérées par leurs probabilités.</p>
+        <ul class="specs">
+          <li><span>Classes</span><b>8, mépris compris</b></li>
+          <li><span>Exactitude</span><b>0,721 · macro-F1 0,654</b></li>
+          <li><span>Cadence</span><b>10 analyses/s</b></li>
+          <li><span>Images</span><b>aucune n'est enregistrée</b></li>
+        </ul>
+      </article>
+      <article class="mcard">
+        <svg class="micon" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#0B3A37"/><rect x="12" y="9" width="16" height="22" rx="2.5" fill="none" stroke="#00D4AA" stroke-width="2"/><path d="M15.5 16h9M15.5 20.5h9M15.5 25h5.5" stroke="#00D4AA" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <h3>Les réponses</h3>
+        <p>Un questionnaire de 30 questions s'ouvre dans une fenêtre verrouillée, juste après l'exposition. Chaque réponse est enregistrée au fur et à mesure.</p>
+        <ul class="specs">
+          <li><span>Sections</span><b>A, B, D, E, F, G et fiche</b></li>
+          <li><span>Échelles</span><b>Likert en 7 points</b></li>
+          <li><span>Émotion déclarée</span><b>Q20 à Q22</b></li>
+          <li><span>Exports</span><b>CSV, Excel, PDF</b></li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ SÉANCE ═══════════ -->
+<section class="section alt" id="seance">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker">Parcours</p>
+      <h2>Une séance, du poste à l'export</h2>
+    </header>
+    <ol class="track">
+      <li><span class="dot">1</span><b>Valider le poste</b><span>Le kit de validation mesure ce que la webcam et l'éclairage permettent.</span></li>
+      <li><span class="dot">2</span><b>Créer la participante</b><span>Un code, jamais un nom. Le groupe est attribué par minimisation.</span></li>
+      <li><span class="dot">3</span><b>Pré-vol</b><span>Six conditions au vert et consentement coché.</span></li>
+      <li class="key"><span class="dot">4</span><b>Calibration</b><span>Refusée au-delà de 2,5° : la séance ne démarre pas.</span></li>
+      <li class="key"><span class="dot">5</span><b>Exposition</b><span>La publicité du groupe, 10 secondes, qualité surveillée en direct.</span></li>
+      <li><span class="dot">6</span><b>Questionnaire</b><span>30 questions, en mode participant.</span></li>
+      <li><span class="dot">7</span><b>Analyse, export</b><span>Neuf onglets d'analyse, rapports PDF et données brutes.</span></li>
+    </ol>
+    <div class="split">
+      <figure class="shot">
+        <div class="frame"><div class="fbar"><span>Expérimentation · pré-vol</span><span aria-hidden="true">– ▢ ✕</span></div>
+          <img src="static/img/w_exp_preflight.webp" width="1600" height="900" loading="lazy" alt="Écran de pré-vol : aperçu de la caméra et six conditions de qualité"></div>
+        <figcaption>Le pré-vol : aperçu de la caméra et six conditions (visage, centrage, distance, éclairage, reflets, stabilité).</figcaption>
+      </figure>
+      <div class="split-text">
+        <h3>La qualité est contrôlée pendant la séance</h3>
+        <p>Le logiciel suit la qualité sur une fenêtre glissante de 10 secondes. Si un seuil est dépassé, la publicité est mise en pause et l'expérimentatrice choisit : recalibrer, arrêter, ou continuer en donnant un motif, enregistré avec la session.</p>
+        <ul class="ticks">
+          <li>fréquence du regard sous 20 mesures par seconde</li>
+          <li>plus de 15 % de regard perdu</li>
+          <li>visage détecté dans moins de la moitié des analyses</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ ÉCRANS ═══════════ -->
+<section class="section" id="ecrans">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker">Captures réelles du logiciel</p>
+      <h2>Les écrans</h2>
+      <p>Captures prises sur une base vide créée pour l'occasion, sans caméra : les compteurs sont à zéro.</p>
+    </header>
+    <div class="gallery">
+      <figure class="g-wide"><img src="static/img/w_accueil.webp" width="1600" height="900" loading="lazy" alt="Page d'accueil"><figcaption>Accueil</figcaption></figure>
+      <figure><img src="static/img/w_participants.webp" width="1600" height="900" loading="lazy" alt="Page Participants, recrutement par groupe sur 40"><figcaption>Participants · 40 par groupe</figcaption></figure>
+      <figure><img src="static/img/w_experimentation.webp" width="1600" height="900" loading="lazy" alt="Page Expérimentation"><figcaption>Expérimentation</figcaption></figure>
+      <figure><img src="static/img/c_calibration.webp" width="1600" height="900" loading="lazy" alt="Écran d'accueil de la calibration en plein écran"><figcaption>Calibration</figcaption></figure>
+      <figure><img src="static/img/k_q06_likert.webp" width="1600" height="1000" loading="lazy" alt="Question 6 du questionnaire en mode participant"><figcaption>Questionnaire</figcaption></figure>
+      <figure><img src="static/img/w_analyse.webp" width="1600" height="900" loading="lazy" alt="Page Analyse, onglet Synthèse"><figcaption>Analyse · Synthèse</figcaption></figure>
+      <figure><img src="static/img/w_analyse_heatmap.webp" width="1600" height="900" loading="lazy" alt="Onglet carte de chaleur"><figcaption>Analyse · Carte de chaleur</figcaption></figure>
+      <figure><img src="static/img/w_rapports.webp" width="1600" height="900" loading="lazy" alt="Page Rapports et exports"><figcaption>Rapports et exports</figcaption></figure>
+      <figure><img src="static/img/v_kit.webp" width="1400" height="891" loading="lazy" alt="Kit de validation du poste"><figcaption>Kit de validation du poste</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ ÉTUDE ═══════════ -->
+<section class="section alt" id="etude">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker">Cadre de l'étude</p>
+      <h2>120 participantes, trois publicités</h2>
+      <p>Le logiciel a été conçu pour un projet de fin d'études : l'effet du registre émotionnel d'une publicité Instagram sur l'achat impulsif. Plan entre sujets, une seule publicité par participante, 10 secondes d'exposition.</p>
+    </header>
+    <div class="groups">
+      <div class="grp a"><span class="gl">A</span><b>Publicité neutre</b><span>NEUTRE · 40 participantes</span></div>
+      <div class="grp b"><span class="gl">B</span><b>Publicité d'urgence</b><span>URGENCE · 40 participantes</span></div>
+      <div class="grp c"><span class="gl">C</span><b>Émotion positive</b><span>POSITIF · 40 participantes</span></div>
+    </div>
+    <div class="cards4">
+      <div class="fcard"><h3>Attribution traçable</h3><p>Chaque groupe est attribué par minimisation, équilibré par tranche d'âge, et peut être recalculé à l'identique.</p></div>
+      <div class="fcard"><h3>Données chiffrées</h3><p>Base SQLCipher, clé de 256 bits protégée par Windows : la base ne s'ouvre que sur le poste de collecte.</p></div>
+      <div class="fcard"><h3>Journal d'audit</h3><p>Consentements et actions sensibles sont inscrits dans un journal chaîné : une modification après coup se détecte.</p></div>
+      <div class="fcard"><h3>Dossier de soutenance</h3><p>Un double-clic exporte le registre de toutes les sessions et les réponses brutes, à partir d'une copie de la base.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ LIMITES ═══════════ -->
+<section class="section" id="limites">
+  <div class="wrap limits">
+    <div>
+      <p class="kicker">Mesuré, pas promis</p>
+      <h2>Ce que montre le kit de validation</h2>
+      <p>Deux passages réels, le 23/11/2026, sur le poste de référence (webcam intégrée, 640 × 480), avec une seule personne. Plus bas est meilleur.</p>
+      <p class="note">Le nouveau calcul du regard améliore nettement le signal, mais ce poste ne passe pas encore le critère de 2,5°. Une collecte ne commence que sur un poste où le kit valide la calibration.</p>
+    </div>
+    <figure class="chart">
+      <svg viewBox="0 0 520 230" role="img" aria-label="Erreur de vérification de 5,16 à 2,89 degrés, seuil 2,5 ; erreur sur la grille de 10,2 à 7,89 ; bruit de 10,1 à 1,82">
+        <g stroke="#1C2D47" stroke-width="1">
+          <line x1="170" y1="24" x2="170" y2="180"/><line x1="232" y1="24" x2="232" y2="180"/><line x1="294" y1="24" x2="294" y2="180"/><line x1="356" y1="24" x2="356" y2="180"/><line x1="418" y1="24" x2="418" y2="180"/><line x1="480" y1="24" x2="480" y2="180"/>
+        </g>
+        <g font-size="11" fill="#7F8EA3" text-anchor="middle" font-family="Inter, sans-serif">
+          <text x="170" y="198">0°</text><text x="232" y="198">2°</text><text x="294" y="198">4°</text><text x="356" y="198">6°</text><text x="418" y="198">8°</text><text x="480" y="198">10°</text>
+        </g>
+        <line x1="247.5" y1="32" x2="247.5" y2="78" stroke="#FBBF24" stroke-width="2" stroke-dasharray="4 3"/>
+        <text x="190" y="28" font-size="11" fill="#FBBF24" font-family="Inter, sans-serif">seuil 2,5°</text>
+        <g font-size="12.5" fill="#E7EDF5" text-anchor="end" font-family="Inter, sans-serif">
+          <text x="158" y="60">Vérification</text><text x="158" y="112">Grille 9 points</text><text x="158" y="164">Bruit</text>
+        </g>
+        <g stroke="#3A4B66" stroke-width="3"><line x1="259.6" y1="56" x2="330" y2="56"/><line x1="414.6" y1="108" x2="486.2" y2="108"/><line x1="226.4" y1="160" x2="483.1" y2="160"/></g>
+        <g fill="#5B6B83"><circle cx="330" cy="56" r="6"/><circle cx="486.2" cy="108" r="6"/><circle cx="483.1" cy="160" r="6"/></g>
+        <g fill="#00D4AA"><circle cx="259.6" cy="56" r="7"/><circle cx="414.6" cy="108" r="7"/><circle cx="226.4" cy="160" r="7"/></g>
+        <g font-size="11.5" font-weight="600" font-family="Inter, sans-serif">
+          <text x="340" y="60" fill="#7F8EA3">5,16°</text><text x="271" y="44" fill="#00D4AA">2,89°</text>
+          <text x="414.6" y="96" fill="#00D4AA" text-anchor="middle">7,89°</text><text x="440" y="128" fill="#7F8EA3">10,2°</text>
+          <text x="226.4" y="148" fill="#00D4AA" text-anchor="middle">1,82°</text><text x="440" y="180" fill="#7F8EA3">10,1°</text>
+        </g>
+        <g font-size="11.5" font-family="Inter, sans-serif" fill="#C9D3E0">
+          <circle cx="176" cy="219" r="5.5" fill="#5B6B83"/><text x="187" y="223">Tête libre, ancien calcul</text>
+          <circle cx="352" cy="219" r="6.5" fill="#00D4AA"/><text x="364" y="223">Appui du menton, calcul actuel</text>
+        </g>
+      </svg>
+    </figure>
+  </div>
+</section>
+
+<!-- ═══════════ DOCUMENTATION ═══════════ -->
+<section class="section alt" id="documentation">
+  <div class="wrap doc">
+    <img class="doc-cover" src="static/img/cover.webp" width="1536" height="1024" loading="lazy" alt="">
+    <div>
+      <p class="kicker">Documentation</p>
+      <h2>Le manuel complet</h2>
+      <p>Manuel d'utilisation et documentation technique, 45 pages : installation, séance pas à pas, méthodes de calcul, gestion des données, limites, glossaire, fiches des indicateurs et FAQ, avec les captures annotées du logiciel.</p>
+      <a class="btn" href="static/docs/MANUEL_MAKRI_TRACKING.pdf" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Télécharger le manuel (PDF, 7 Mo)
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ À PROPOS ═══════════ -->
+<section class="section" id="about">
+  <div class="wrap about">
+    <h2>À propos du projet</h2>
+    <p>MAKRI TRACKING est un outil de recherche en marketing qui réunit oculométrie, codage facial et psychométrie dans un logiciel de bureau, sans infrastructure cloud. Il est écrit en Python 3.11 avec PySide6, MediaPipe et ONNX Runtime, et testé par plus de 1 000 tests automatiques.</p>
+    <dl class="credits">
+      <div><dt>Développé par</dt><dd>Soukayna EL MAKRINI</dd></div>
+      <div><dt>Établissement</dt><dd>FPN NADOR</dd></div>
+      <div><dt>Version</dt><dd>2.0.0</dd></div>
+    </dl>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <p>&copy; <span id="annee">2026</span> MAKRI TRACKING · Soukayna EL MAKRINI · FPN NADOR</p>
+    <p class="small">Python · PySide6 · MediaPipe · ONNX Runtime · SQLCipher. Illustration de couverture générée avec GPT Image 2.5.</p>
+  </div>
+</footer>
+
+<script src="static/script.js"></script>
+</body>
+</html>
