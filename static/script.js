@@ -1,64 +1,18 @@
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-            targetElement.scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
-    });
-});
+// Menu de navigation sur téléphone
+const menuBtn = document.querySelector('.menu-btn');
+const nav = document.getElementById('nav');
 
-// Simple intersection observer for fade-in animations on scroll
-const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1
-};
+if (menuBtn && nav) {
+    const setOpen = (open) => {
+        nav.classList.toggle('open', open);
+        menuBtn.setAttribute('aria-expanded', String(open));
+        menuBtn.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+    };
+    menuBtn.addEventListener('click', () => setOpen(!nav.classList.contains('open')));
+    nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setOpen(false)));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
+}
 
-const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = 1;
-            entry.target.style.transform = 'translateY(0)';
-            observer.unobserve(entry.target);
-        }
-    });
-}, observerOptions);
-
-// Apply fade-in to feature cards and documentation cards
-document.querySelectorAll('.feature-card, .doc-card').forEach(card => {
-    card.style.opacity = 0;
-    card.style.transform = 'translateY(20px)';
-    card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-    observer.observe(card);
-});
-
-// Hamburger Menu Toggle
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
-const links = document.querySelectorAll('.nav-links a');
-
-hamburger.addEventListener('click', () => {
-    // Toggle Nav
-    navLinks.classList.toggle('nav-active');
-    
-    // Burger Animation
-    hamburger.classList.toggle('toggle');
-});
-
-// Close menu when clicking a link
-links.forEach(link => {
-    link.addEventListener('click', () => {
-        if(navLinks.classList.contains('nav-active')) {
-            navLinks.classList.remove('nav-active');
-            hamburger.classList.remove('toggle');
-        }
-    });
-});
+// Année courante dans le pied de page
+const year = document.getElementById('annee');
+if (year) year.textContent = new Date().getFullYear();
