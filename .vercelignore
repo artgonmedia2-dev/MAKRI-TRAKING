@@ -1,0 +1,9 @@
+# Vercel ne sert que le site statique (index.html + static/).
+# Le site Flask et Docker restent dans le dépôt pour Cloud Run.
+app.py
+build_static.py
+requirements.txt
+Dockerfile
+templates/
+__pycache__/
+static/docs/GUIDE_UTILISATEUR_ET_DOCUMENTATION_FINALE.pdf
