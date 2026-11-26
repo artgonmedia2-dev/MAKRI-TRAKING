@@ -107,6 +107,9 @@ p { margin: 0 0 14px; }
 .fbar { display: flex; justify-content: space-between; padding: 7px 12px; font-size: 12px; color: #4E5D6C; background: #F7F9FA; border-bottom: 1px solid #DDE4E6; }
 .fbar span:last-child { letter-spacing: .3em; color: #8A97A5; font-family: var(--font-mono); }
 .shot figcaption { color: var(--muted); font-size: 13.5px; margin-top: 12px; }
+.demo .frame { background: var(--bg); }
+.demo video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: var(--bg); }
+.demo figcaption a { color: var(--accent); }
 .gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
 .gallery figure { margin: 0; min-width: 0; }
 .gallery img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: top left; border-radius: 10px; border: 1px solid var(--line); background: #E6ECEF; transition: transform .2s; }
